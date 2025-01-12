@@ -1,0 +1,65 @@
+<div class="container mt-4">
+    <h2>Create New Node</h2>
+    <form (ngSubmit)="createNode()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          id="title"
+          [(ngModel)]="title"
+          name="title"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea
+          id="content"
+          [(ngModel)]="content"
+          name="content"
+          class="form-control"
+          required
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="theme" class="form-label">Theme</label>
+        <select
+          id="theme"
+          [(ngModel)]="themeId"
+          name="theme"
+          class="form-control"
+          required
+        >
+          <option value="" disabled selected>Select a theme</option>
+          <option *ngFor="let theme of themes" [value]="theme.id">
+            {{ theme.title }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="createdBy" class="form-label">Created By</label>
+        <select
+          id="createdBy"
+          [(ngModel)]="createdById"
+          name="createdBy"
+          class="form-control"
+          required
+        >
+          <option value="" disabled selected>Select a user</option>
+          <option *ngFor="let user of users" [value]="user.id">
+            {{ user.email }}
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Create Node</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="navigateToNewNode()"
+      >
+        Cancel
+      </button>
+    </form>
+  </div>
+  

@@ -1,0 +1,82 @@
+<div class="container-fluid layout d-flex flex-column align-items-center justify-content-center">
+    <div class="row main w-100">
+  
+      <div class="col-12 col-lg-10 content">
+        <div class="list-container bg-secondary rounded p-4 shadow">
+          <div class="header-container d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-white">Nodes</h2>
+            <button
+                class="btn btn-primary"
+                (click)="navigateToNewNode()"
+            >
+                New Node
+            </button>
+          </div>
+
+          <p *ngIf="isLoading" class="text-white text-center">Loading nodes...</p>
+
+          <table
+            class="table table-dark table-striped rounded text-center"
+            *ngIf="!isLoading && nodes.length > 0"
+          >
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Theme</th>
+                <th>Created By</th>
+                <th>Created At</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let node of nodes">
+                <td>{{ node.title || 'No Title' }}</td>
+                <td>{{ node.content || 'No Content' }}</td>
+                <td>{{ node.theme || 'No Theme' }}</td>
+                <td>{{ node.createdByEmail || 'Unknown' }}</td>
+                <td>{{ node.createdAt || 'Unknown Date' }}</td>
+                <td>
+                  <button class="btn btn-warning btn-sm me-2" (click)="startEditing(node)">Edit</button>
+                  <button class="btn btn-danger btn-sm" (click)="deleteNode(node.id)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <p *ngIf="!isLoading && nodes.length === 0" class="text-white text-center mt-3">
+            No nodes available.
+          </p>
+
+          <div *ngIf="isEditing && selectedNode" class="edit-form bg-light p-4 rounded shadow mt-4">
+            <h3>Edit Node</h3>
+            <form (ngSubmit)="saveNode()">
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input
+                  type="text"
+                  id="title"
+                  [(ngModel)]="selectedNode.title"
+                  name="title"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea
+                  id="content"
+                  [(ngModel)]="selectedNode.content"
+                  name="content"
+                  class="form-control"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-success me-2">Save</button>
+              <button type="button" class="btn btn-secondary" (click)="cancelEditing()">Cancel</button>
+            </form>
+          </div>
+                   
+        </div>
+      </div>
+    </div>
+  </div>
+  
