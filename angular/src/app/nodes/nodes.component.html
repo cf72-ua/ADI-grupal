@@ -59,6 +59,7 @@
                   [(ngModel)]="selectedNode.title"
                   name="title"
                   class="form-control"
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -68,12 +69,42 @@
                   [(ngModel)]="selectedNode.content"
                   name="content"
                   class="form-control"
+                  required
                 ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="theme" class="form-label">Theme</label>
+                <select
+                  id="theme"
+                  [(ngModel)]="selectedNode.themeId"
+                  name="theme"
+                  class="form-control"
+                  required
+                >
+                  <option *ngFor="let theme of themes" [ngValue]="theme.id">
+                    {{ theme.title }}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="createdBy" class="form-label">Created By</label>
+                <select
+                  id="createdBy"
+                  [(ngModel)]="selectedNode.createdBy"
+                  name="createdBy"
+                  class="form-control"
+                  required
+                >
+                  <option *ngFor="let user of users" [ngValue]="user.id">
+                    {{ user.email }}
+                  </option>
+                </select>
               </div>
               <button type="submit" class="btn btn-success me-2">Save</button>
               <button type="button" class="btn btn-secondary" (click)="cancelEditing()">Cancel</button>
             </form>
           </div>
+          
                    
         </div>
       </div>
