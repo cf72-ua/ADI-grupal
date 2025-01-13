@@ -13,6 +13,7 @@ Hemos creado tres aplicaciones web pequeñas utilizando tres frameworks diferent
 En el vídeo hablamos sobre los frameworks utilizados y algunas diferencias y semejanzas que hemos encontrado con el framework de Vue. Querríamos haber profundizado más pero se nos iba el tiempo, así que hemos comentado aquellas partes que nos parecían más interesantes.
 
 ### Vídeo
+- https://youtu.be/l7qT4PJ0eCk
 
 ### Github
 - https://github.com/cf72-ua/ADI-grupal.git
