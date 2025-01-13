@@ -31,3 +31,7 @@ En el vídeo hablamos sobre los frameworks utilizados y algunas diferencias y se
 - https://angular.dev/overview: documentación general de Angular.
 - https://docs.angular.lat/tutorial/toh-pt0: crear un nuevo proyecto con Angular (comandos paso a paso).
 - https://desarrolloweb.com/articulos/clases-interfaces-servicios-angular.html: crear interfaz con Angular para definir las estructuras de datos.
+- https://docs.solidjs.com/quick-start Guia para crear un proyecto SolidJS
+- https://docs.solidjs.com/concepts/components/basics Documentación para mejorar la comprensión de los Componentes de SolidJS
+- https://docs.solidjs.com/reference/basic-reactivity/create-signal Documentación para entender las signals y poder utilizarlas
+- https://www.youtube.com/watch?v=YZg_LebYhHw Video explicativo para entender mejor las signals
