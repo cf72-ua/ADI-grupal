@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
         this.router.navigate(['/login']);
       })
       .catch((error) => {
-        console.error('Error al cerrar sesión:', error);
+        console.error('Failed to log out:', error);
       });
   }
 }

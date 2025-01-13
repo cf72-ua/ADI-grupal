@@ -31,16 +31,16 @@ export class LoginComponent implements OnInit {
     if (this.email && this.password) {
       signInWithEmailAndPassword(this.auth, this.email, this.password)
         .then(() => {
-          this.successMessage = 'Inicio de sesión exitoso';
+          this.successMessage = 'Log in successfull!';
           this.errorMessage = '';
           this.router.navigate(['/']);
         })
         .catch((error) => {
-          this.errorMessage = 'Error al iniciar sesión: ' + error.message;
+          this.errorMessage = 'Log in error: ' + error.message;
           this.successMessage = '';
         });
     } else {
-      this.errorMessage = 'Por favor, completa todos los campos.';
+      this.errorMessage = 'Please, fill everythin.';
       this.successMessage = '';
     }
   }

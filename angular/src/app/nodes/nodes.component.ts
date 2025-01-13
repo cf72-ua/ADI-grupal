@@ -44,8 +44,8 @@ export class NodesComponent implements OnInit {
       this.isLoading = true;
       this.nodes = await this.nodesService.getNodes();
     } catch (error) {
-      console.error('Error al cargar los nodos:', error);
-      this.errorMessage = 'No se pudieron cargar los nodos. Intenta nuevamente.';
+      console.error('Error loading nodes:', error);
+      this.errorMessage = 'Couldnt load nodes. Try again.';
     } finally {
       this.isLoading = false;
     }
@@ -55,7 +55,7 @@ export class NodesComponent implements OnInit {
     try {
       this.themes = await this.sharedService.getThemes();
     } catch (error) {
-      console.error('Error al cargar los temas:', error);
+      console.error('Error loading themes:', error);
     }
   }
 
@@ -63,7 +63,7 @@ export class NodesComponent implements OnInit {
     try {
       this.users = await this.sharedService.getUsers();
     } catch (error) {
-      console.error('Error al cargar los usuarios:', error);
+      console.error('Error loading users:', error);
     }
   }
 
