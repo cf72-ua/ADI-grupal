@@ -131,13 +131,13 @@
 
 <header>
     <nav>
-        <a href="/" class:active={isActive("/")}>Home</a>
-        <a href="/nodes" class:active={isActive("/nodes")}>Nodes</a>
-        <a href="/themes" class:active={isActive("/themes")}>Themes</a>
+        <a href="/" class:active={isActive("/")}>Nodality</a>
+        <a href="/nodes" class:active={isActive("/nodes")}>Nodos</a>
+        <a href="/themes" class:active={isActive("/themes")}>Temas</a>
         {#if isLoggedIn}
-            <a on:click={logout} style="cursor: pointer;">Logout</a>
+            <a on:click={logout} style="cursor: pointer;">Cerrar Sesión</a>
         {:else}
-            <a href="/login" class:active={isActive("/login")}>Login</a>
+            <a href="/login" class:active={isActive("/login")}>Iniciar Sesión</a>
         {/if}
     </nav>
 </header>
